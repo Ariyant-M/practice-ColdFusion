@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allProduct>
+			
+				<product productid="2">
+					<productid>2</productid>
+					<productname>Yahoo</productname>
+					<productdetails>Yahoo! is an American web services provider headquartered in Sunnyvale, California, and owned by Verizon Media. The original Yahoo! company was founded by Jerry Yang and David Filo in January 1994 and was incorporated on March 2, 1995. Yahoo was one of the pioneers of the early Internet era in the 1990s.</productdetails>
+				</product>
+			
+				<product productid="3">
+					<productid>3</productid>
+					<productname>Facebook</productname>
+					<productdetails>Facebook, Inc. is an American technology conglomerate based in Menlo Park, California. It was founded by Mark Zuckerberg, along with his fellow roommates and students at Harvard College, who were Eduardo</productdetails>
+				</product>
+			
+				<product productid="4">
+					<productid>4</productid>
+					<productname>Apple</productname>
+					<productdetails>Apple new, Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, and online services.</productdetails>
+				</product>
+			
+				<product productid="5">
+					<productid>5</productid>
+					<productname>Microsoft</productname>
+					<productdetails>Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.</productdetails>
+				</product>
+			
+				<product productid="28">
+					<productid>28</productid>
+					<productname>Oracle</productname>
+					<productdetails>Oracle Corporation is an American multinational computer technology corporation headquartered in Austin, Texas. The company was formerly headquartered in Redwood Shores, California until December 2020 when it moved its headquarters to Texas.</productdetails>
+				</product>
+			
+				<product productid="31">
+					<productid>31</productid>
+					<productname>HP</productname>
+					<productdetails>The Hewlett-Packard Company, commonly shortened to Hewlett-Packard or HP, was an American multinational information technology company headquartered in Palo Alto, California, that developed and provided </productdetails>
+				</product>
+			
+		</allProduct>
