@@ -66,10 +66,6 @@
 	</cfscript>
 
 	<!--- search in xml file --->
-	<cfscript>
-	    params = structNew();
-	    params[""] = "Mary";
-	</cfscript>
-
+	
 </body>
 </html>
