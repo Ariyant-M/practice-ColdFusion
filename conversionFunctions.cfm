@@ -1,5 +1,5 @@
 <!--- convert array to list --->
-<h3>convert array to list</h3>
+<u><h3>convert array to list</h3></u>
 <cfscript>
        myArray=["Google","Microsoft","Adobe","Facebook","Amazon"];
        myConvertedList=myArray.toList();
@@ -14,7 +14,7 @@
 
 
 <!--- binary encode decode --->
-<h3>Binary encode decode</h3>
+<u><h3>Binary encode decode</h3></u>
 <cfscript>
  
 	function base64ToHex( String base64Value ){
@@ -72,7 +72,7 @@
 </cfscript>
 
 <!--- character encode decode --->
-<h3>Character Encoding Conversion</h3> 
+<u><h3>Character Encoding Conversion</h3></u> 
 <!--- Do the conversions. --->
 <cfscript> 
 myString="Hello ColdFusion";
@@ -96,3 +96,69 @@ charencode=CharsetEncode(chardecode, charEncoding);
 #charencode#</p> 
 </cfoutput>
 
+<!--- SerializeJSON --->
+<u><h3>SerializeJSON</h3></u>
+<h4>struct to JSON</h4>
+<cfscript>
+	emp = structNew();
+	emp.firstname = 'ariyant';
+	emp.lastname = 'meher';
+	writeOutput(serializeJSON(emp));
+</cfscript>
+<h4>query to JSON</h4>
+
+<cfscript>
+	query = "SELECT FLD_PRODUCTID,  FLD_PRODUCTNAME, FLD_PRODUCTDETAILS FROM TBL_PRODUCTLIST";
+	option = {datasource : 'myAppDB'};
+	res = queryExecute(query,{},option);
+	writeDump(serializeJSON(res));
+</cfscript>
+
+<h4>add metaData</h4>
+<cfscript>
+	emp.firstname = 'Yes';
+	emp.lastname = 'man';
+	metaData = {firstname : {type : 'string', name : 'fName'}};
+	emp.SetMetaData(metaData);
+	writeOutput(serializeJSON(emp));
+</cfscript>
+
+<!--- using setMetaData function --->
+<h4>using setMetaData dunction</h4>
+<cfscript>
+	emp.address = {"doorno": "148", "street":"10 Downing Street", "country": "UK"};
+	emp.address.setmetadata({"doorno": {type: "string", name: "DoorNo"},"street": "string","country": "string"});
+	metadata = {firstname: {type: "string", name: "fname"}};
+	emp.setmetadata(metadata);
+	writeoutput(SerializeJSON(emp));
+</cfscript>
+
+<!--- set metaData for Array --->
+<h4>metaData for array(items:)</h4>
+<cfscript>
+   example = structnew();
+   example.firstname = "Yes";
+   example.lastname = "Man";
+   example.inputs = ["2500.12", 4.0, "Yes", "False", "339090", {"q1": "Yes"}, ["1","2","3"]];
+   example.setmetadata({firstname: "string", inputs: {items: ["numeric", "integer", "string", "boolean", "string", 
+   {q1: "boolean"}, {items: "string"}]}});
+   writeoutput(serializeJSON(example));
+</cfscript>
+
+<h5> use 'ignore: true' in metaData to ignore in JSON</h5>
+<h5>use 'structName.getMetadata()' to see metaData</h5>
+
+<!--- RETRIEVING METADATA --->
+<h4>Retrieving metaData</h4>
+<cfscript>
+    inputs = ["2500.12", 4.0, "Yes", "False", "339090", {"q1": "Yes"}, ["1","2","3"]];
+    inputs.setmetadata({items: ["string", "integer", "string", "boolean", "string", {q1: "string"}, {items: "string"}]});
+    writeOutput(serializeJSON(inputs));
+    writedump(inputs.getMetadata());
+</cfscript>
+
+<!--- DeserializeJSON --->
+<u><h3>DeserializeJSON</h3></u>
+<cfscript>
+	writeDump(deserializeJSON(serializeJSON(inputs)));
+</cfscript>
